@@ -1,30 +1,24 @@
-**ASE2GPL** is a Python-Fu plugin for GIMP 2.8, that imports Adobe Swatch Exchange (ASE)
-palette files by converting them into GIMP'S GPL format. The converted palette is
-automatically added to the user's GIMP palette library.
+**ASE2GPL** is a Python script that converts Adobe Swatch Exchange (ASE)
+palettes in a directory into GIMP'S GPL format. The converted palettes are outputted
+to a gpl directory inside the palettes directory.
 
-[This script was originally written in 2008 by Chris Mohler for Kuler's palette 
-exports][ORIGINAL]. It was updated by Roy Curtis in 2018 [after an issue report on reddit
+This script was [originally written in 2008 by Chris Mohler][ORIGINAL] for Kuler's palette 
+exports. It was [updated by Roy Curtis][ROY]  in 2018 [after an issue report on reddit
 by /u/Adderbox76][REDDIT].
 
-This plugin allows ASE palettes exported from [Adobe's Color Creative Cloud (formerly
-Kuler)][KULER] to be converted to GPL files and imported into GIMP.
 
-# Installation
-
-Simply save `ASE2GPL.py` into your local GIMP's `plug-ins` folder:
-
-* Windows: `%USERPROFILE%\.gimp-2.8\plug-ins`
-* Linux: `$HOME/.gimp-2.8/plug-ins`
-* OS X: `$HOME/Library/Application Support/GIMP/2.8/plug-ins/`
-
-You must **restart** GIMP after (un)installing the script, for it to appear.
+This script allows ASE palettes exported from [Adobe's Color Creative Cloud (formerly
+Kuler)][KULER] to be converted to GPL files.
 
 # Usage
 
-1. [Open the Palettes dock with Windows > Dockable Dialogs > Palettes][1]
-2. [Right-click an existing Palette and "Import ASE palette..."][2]
-3. [Navigate to the target ASE palette and hit OK][3]
-4. [Observe as the palette is imported and auto-selected][4]
+The script was modified to convert all .ase palettes inside a specified directory, any othre file will
+be ignored, the converted palettes will be otputted into a gpl directory inside the specified directory.
+To execute the script just run a python2.7 command line, execute with the python command and pass a path
+to the script and a path to the palettes directory.
+ 
+`python /path/to/script-dir/ASE2GPL.py /path/to/palettes/dir`
+
 
 Note that if the ASE file has multiple palettes (as is possible, according to the spec),
 each palette will be imported as its own new palette file.
@@ -52,6 +46,7 @@ References used for the ASE format:
 
 
 [ORIGINAL]: http://registry.gimp.org/node/10325
+[ROY]: https://github.com/RoyCurtis/ASE2GIMP
 [REDDIT]: https://www.reddit.com/r/GIMP/comments/80t574/kuler_palettes_to_gpl/
 [KULER]: https://color.adobe.com/
 [1]: https://i.imgur.com/lvaIRTi.jpg
